@@ -186,6 +186,76 @@ header p {
         0%, 100% { opacity: 1; }
         50% { opacity : 0.6; }
       }
+
+
+      /* 📱 Responsive Design */
+
+/* Tablets (600px–900px) */
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .social-links {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 22px;
+  }
+
+  .social-links a img {
+    width: 35px;
+    height: 35px;
+    opacity: 0.9;
+  }
+
+  .msg {
+    bottom: 40px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 26px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 20px;
+    border-radius: 25px;
+    color: #ffe44d;
+    animation: fadeInMsg 2s ease-in-out infinite;
+  }
+}
+
+/* Mobile phones (below 600px) — includes Oppo A5 2020 */
+@media screen and (max-width: 600px) {
+  .social-links {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+  }
+
+  .social-links a img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(0); /* makes them dark on bright background */
+    opacity: 0.9;
+  }
+
+  .social-links a:hover img {
+    filter: drop-shadow(0 0 6px #00bfff);
+  }
+
+  .msg {
+    position: fixed;
+    bottom: 70px; /* above icons */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #0f172a, #1e3a8a);
+    padding: 6px 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f3e3a1;
+    text-shadow: 0 0 6px #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeInMsg 2.0s ease-in-out infinite;
+  }
+}
+
 </style>
 </head>
   <meta charset="UTF-8">
