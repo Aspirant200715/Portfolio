@@ -419,6 +419,170 @@
 }
 
 
+/* Tablet screens (600px–900px) */
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    flex: 100%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    max-width: none;
+    left: 0;
+    text-align: center;
+  }
+
+  .info p {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .right h1 {
+    font-size: 30px;
+  }
+
+  .right h2 {
+    font-size: 22px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+ /* Keep nav & logo fixed at top */
+  nav {
+    position: absolute !important;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 24px !important;
+    font-weight: bold;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute !important;
+    top: 10px;
+    left: 10px;
+    width: 55px;
+    height: 55px;
+    z-index: 1001;
+  }
+}
+
+/* Smartphones (under 600px) — includes Oppo A5 2020 */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    flex: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-width: 4px;
+    position:relative;
+    top:30px;
+  }
+
+  .info {
+    max-width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .info p {
+    font-size: 18px;
+  }
+
+  .right h1 {
+    font-size: 26px;
+  }
+
+  .right h2 {
+    font-size: 18px;
+  }
+
+  .right .text-block p {
+    font-size: 16px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-links {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 14px;
+  }
+
+  .social-links a img {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Keep nav and logo fixed in mobile too */
+  nav {
+    position: absolute !important;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20px !important;
+    font-weight: bold;
+    z-index: 1000;
+    margin-top:0px;
+  }
+
+  .logo {
+    position: absolute !important;
+    top: 8px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    z-index: 1001;
+  }
+
+  .skills-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .skill-item p {
+    font-size: 0.8rem;
+  }
+}
+
+
       
   </style>
 </head>
