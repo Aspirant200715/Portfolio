@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>  
+  
+body {
+  margin: 0;
+  font-family:sans-serif;
+  background: linear-gradient(135deg, #0a1a3f, #1e3a8a);
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 2rem;
+  animation: fadeInDown 1s ease;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffd700;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.project-card img,
+.project-card video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  margin: 0.5rem 0;
+  color: #ffd700;
+  
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  line-height: 1.4;
+}
+
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ .social-links {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 18px;
+  z-index: 1000;
+}
+
+.social-links a img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1); /* makes them white on dark background */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #00bfff);
+}
+
+
+
+/* SG LOGO */
+      .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        z-index: 5;
+      }
+      .logo:hover {
+        transform: scale(1.1);
+      }
+        @keyframes fadeIn {
+            from {
+            opacity: 0;
+            transform: scale(0.5);
+            }
+            to {
+            opacity: 1;
+            transform: scale(1);
+            }
+        }
+            .home:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+                color:aliceblue;
+
+    }
+    
+    .contact:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+        color:aliceblue;
+    }
+    .projects:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+                color:aliceblue;}
+
+      .nav-link {
+       color: rgb(87, 189, 230);
+       text-decoration: none;  /* removes underline */
+       transition: all 0.3s ease;
+       animation: faden 0.8s 1s forwards;
+       opacity : 0;
+       transform: scale(0.5);}
+
+         @keyframes faden {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+        
+      }
+      .msg{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1px 15px;
+        border-radius: 20px;
+        font-size: 30px;
+        color: #cfed10;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        animation: fadeInMsg 2s ease-in-out infinite;
+        z-index:2000;
+      }
+      @keyframes fadeInMsg {
+        0%, 100% { opacity: 1; }
+        50% { opacity : 0.6; }
+      }
+</style>
+</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="projects.css">
+
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <p><strong>Showcasing my work with videos, screenshots & project details</strong></p>
+  </header>
+
+  <main class="projects-container">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <video controls poster="image copy 3.png">
+        <source src="Screen Recording 2025-08-24 102444.mp4" type="video/mp4">
+      </video>
+      <h2>WEATHEROPEDIA</h2>
+      <p> <strong>Dynamic Live weather detection tool using names of places</strong></p>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="image copy 5.png" alt="Project Two Screenshot">
+      <h2>Mini projects</h2>
+      <p><strong>Small fun projects to buld concepts</strong></p>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <video controls poster="image copy 4.png">
+        <source src="DASHBOARD.mp4" type="video/mp4">
+      </video>
+      <h2>AYUSH BRIDGE</h2>
+      <p><strong>A Strong and lightweight tool that integrates modern healthcare with traditonal medicines</strong> </p>
+    </div>
+  </main>
+  <div>
+        <nav style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); 
+            display: flex; justify-content: flex-end; gap: 40px; right: -150px; 
+            left:auto; font-size:26px; top:20px; font-weight:bold;">
+  
+  <a href="index2.html" class="nav-link home">Home</a>
+  <a href="index3.html" class="nav-link contact">Contact</a>
+  <a href="index4.html" class="nav-link projects">Projects</a>
+
+</nav>
+      <a href="index.html"><img src="ChatGPT Image Oct 2, 2025, 12_51_56 AM.png" alt="Logo" class="logo"></a>
+    </div>
+          <!-- Social Media Icons -->
+<div class="social-links">
+  <a href="https://github.com/Aspirant200715" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+  </a>
+  <a href="https://x.com/Seriousaspurant" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter">
+  </a>
+  <a href="https://www.instagram.com/aspirant200715/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com/in/soham-gangopadhyay-b47519368/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+  </a>
+</div>
+<div class="msg">
+  <p><strong>More projects on the way..........</strong></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Soham Gangopadhyay — Portfolio</title>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-top: #071033;
+        --bg-bottom: #0b2546;
+        --accent-1: #39c4ff;
+        --accent-2: #7b4cff;
+        --muted: #bfc9d7;
+        --text: #ffffff;
+        --radius: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        color: var(--text);
+        background: linear-gradient(
+          180deg,
+          var(--bg-top) 0%,
+          var(--bg-bottom) 100%
+        );
+        /* overflow-x: hidden; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        background-image: linear-gradient(
+            transparent 94%,
+            rgba(255, 255, 255, 0.01) 100%
+          ),
+          radial-gradient(
+            ellipse at 10% 10%,
+            rgba(255, 255, 255, 0.02),
+            transparent 20%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.01) 0 1px,
+            transparent 1px
+          );
+        background-repeat: repeat;
+        pointer-events: none;
+        z-index: 0;
+        background-size: 100% 50px, 200px 200px, 50px 50px;
+        opacity: 0.15;
+      }
+
+      .hero {
+        width: min(1200px, 96%);
+        max-width: 1400px;
+        height: min(620px, 85vh);
+        display: grid;
+        grid-template-columns: 1fr 440px;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 18px;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+      }
+      .logo img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+        display: block;
+      }
+      .logo:hover {
+        transform: scale(1.1);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .hero-left {
+        padding: 28px 12px;
+        align-self: center;
+        z-index: 2;
+        animation: slideInLeft 0.9s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .name {
+        font-size: clamp(34px, 5.6vw, 64px);
+        line-height: 1;
+        letter-spacing: 1px;
+        font-weight: 800;
+        margin: 5px 0 12px 0;
+        color: var(--text);
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        display: block;
+        color: var(--accent-1);
+        font-weight: 700;
+        font-size: clamp(14px, 1.6vw, 20px);
+        margin-bottom: 18px;
+        letter-spacing: 2px;
+      }
+
+      .tagline {
+        color: var(--muted);
+        font-size: clamp(14px, 1.4vw, 20px);
+        max-width: 70%;
+        margin-bottom: 28px;
+        line-height: 1.6;
+        ;
+      }
+
+      .cta {
+        display: inline-block;
+        text-decoration: none;
+        padding: 14px 34px;
+        border-radius: 12px;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 1px;
+        background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+        box-shadow: 0 10px 30px rgba(59, 63, 160, 0.35),
+          0 2px 6px rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.06);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cta:hover,
+      .cta:focus {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(59, 63, 160, 0.45);
+        outline: none;
+      }
+
+      .hero-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        padding: 24px;
+        animation: fadeIn 0.9s 0.2s ease forwards;
+        opacity: 0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.1);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .portrait-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+/* background moving pattern */
+      body {
+  background: linear-gradient(-90deg, #08156c, #203a43, #65a2a5, #1649a9);
+  background-size: 400% 400%;
+  animation: gradientMove 7s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+     /* my own photo  */
+      .portrait {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: url("WhatsApp Image 2025-09-29 at 15.38.43_279d85a8.jpg");
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        z-index: 1;
+      }
+
+      .portrait::before {
+        content: "";
+        position: absolute;
+        inset: -26px; /* extends glow all around */
+        border-radius: 50%;
+        background: radial-gradient(
+            circle at 30% 30%,
+            rgba(57, 196, 255, 0.15),
+            transparent 20%
+          ),
+          conic-gradient(
+            from 200deg,
+            rgba(57, 196, 255, 0.9),
+            rgba(123, 76, 255, 0.9)
+          );
+        filter: blur(8px);
+        z-index: -2;
+        mix-blend-mode: screen; /* creates a glowing effect */
+        opacity: 0.25;
+      }
+
+      .separator {
+        position: absolute;
+        left: calc(50% - 220px);
+        top: 10%;
+        bottom: 10%;
+        width: 6px;
+        background: linear-gradient(#ffffff10, #ffffff14, #ffffff08);
+        border-radius: 6px;
+        z-index: 1;
+        display: none;
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          height: auto;
+          padding: 28px;
+        }
+        .hero-left {
+          text-align: center;
+          padding: 8px;
+        }
+        .tagline {
+          max-width: 100%;
+        }
+        .portrait {
+          width: 260px;
+          height: 260px;
+        }
+        .hero-right {
+          order: -1;
+        }
+        .separator {
+          display: none;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:focus {
+        outline: 3px solid rgba(57, 196, 255, 0.25);
+        outline-offset: 3px;
+        border-radius: 8px;
+      }
+
+      .home:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+                color:aliceblue
+
+    }
+    
+    .contact:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+                color:aliceblue
+
+    }
+    .projects:hover{
+        font-size:35px;
+        transition: all 0.7s ease;
+              color:aliceblue
+}
+
+      .nav-link {
+       color: rgb(17, 229, 233);
+       text-decoration: none;  /* removes underline */
+       transition: all 0.3s ease;
+       animation: faden 0.8s 1s forwards;
+       opacity : 0;
+       transform: scale(0.5);
+    }
+    @keyframes faden {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+        }
+
+        .social-links {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 18px;
+  z-index: 1000;
+}
+
+.social-links a img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1); /* makes them white on dark background */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #00bfff);
+}
+        
+    </style>
+  </head>
+  <body>
+    <div class="hero" aria-label="Portfolio intro">
+      <!-- logo -->
+      <a class="logo" href="#" aria-label="Home">
+        <img src="ChatGPT Image Oct 2, 2025, 12_51_56 AM.png" alt="SG logo" />
+      </a>
+
+      <!-- left column -->
+      <div class="hero-left">
+        <h1 class="name">Soham<br /><strong>Gangopadhyay</strong></h1>
+        <div class="subtitle">FULL-STACK DEVELOPER</div>
+        <p class="tagline">
+          Crafting clean, scalable, and efficient digital solutions — modern web
+          apps, elegant UI, and solid backend systems.
+        </p>
+
+        <!-- CTA: replace link with your portfolio link -->
+        <a class="cta" href="index2.html" role="button">VIEW PORTFOLIO</a>
+      </div>
+
+      <!-- right column -->
+      <div class="hero-right" aria-hidden="false">
+        <div class="portrait" aria-hidden="true"></div>
+      </div>
+
+      
+    </div>
+    <div>
+        <nav style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); 
+            display: flex; justify-content: flex-end; gap: 40px; right: -150px; 
+            left:auto; font-size:30px; top:20px; font-weight:bold;">
+  
+  <a href="index2.html" class="nav-link home">Home</a>
+  <a href="index3.html" class="nav-link contact">Contact</a>
+  <a href="index4.html" class="nav-link projects">Projects</a>
+
+</nav>
+        <!-- Social Media Icons -->
+<div class="social-links">
+  <a href="https://github.com/Aspirant200715" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+  </a>
+  <a href="https://x.com/Seriousaspurant" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter">
+  </a>
+  <a href="https://www.instagram.com/aspirant200715/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com/in/soham-gangopadhyay-b47519368/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+  </a>
+</div>
+  </body>
+</html>
