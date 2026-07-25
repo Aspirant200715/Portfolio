@@ -15,33 +15,63 @@ export const socialLinks = {
 export const achievements = [
   {
     title: "JEE Advanced",
-    description: "Cleared one of the toughest engineering entrance examinations in the world.",
+    description: "Cleared one of India’s toughest engineering entrance examinations.",
     icon: "🎓",
   },
   {
-    title: "National Math Olympiad",
-    description: "Ranked among the Top 50 students nationwide.",
+    title: "Math Olympiad",
+    description: "Ranked among the Top 50 students nationwide in National Math Olympiad.",
     icon: "🏆",
   },
   {
+    title: "Meta Hackathon",
+    description: "Participated in Meta Hackathon and built AI-driven solutions.",
+    icon: "💬",
+  },
+  {
+    title: "Vector Global",
+    description: "Competed in hackathon focused on vector embeddings and semantic search.",
+    icon: "🧠",
+  },
+  {
+    title: "AI for Bharat",
+    description: "Developed AI solutions for Indian social challenges (AWS Hackathon).",
+    icon: "🇮🇳",
+  },
+  {
+    title: "Google Solution Challenge",
+    description: "Built a prototype for an AI-powered volunteer finder to optimize disaster relief efforts.",
+    icon: "💡",
+  },
+  {
+    title: "IIT Madras Road Safety Hackathon",
+    description: "Developed an AI-based prototype for a real-time pothole detection model to enhance road safety.",
+    icon: "🛣️",
+  },
+  {
     title: "AI Agent Olympics",
-    description: "Selected participant in a elite competition focused on autonomous agent systems.",
+    description: "Selected participant focused on autonomous AI agent systems.",
     icon: "🤖",
   },
   {
     title: "Hacktoberfest",
-    description: "Successfully contributed to major open-source repositories.",
+    description: "Successfully merged 3 PRs into major open-source repositories.",
     icon: "🚀",
   },
   {
-    title: "ML Research Grant",
-    description: "Awarded for excellence in developing novel diffusion models for science.",
-    icon: "🔬",
+    title: "GSSoC Top Contributor",
+    description: "Recognized as a Top Contributor in GirlScript Summer of Code for impactful open-source contributions.",
+    icon: "🌟",
   },
   {
-    title: "System Architecture Lead",
-    description: "Managed end-to-end development of enterprise-grade AI pipelines.",
-    icon: "🏗️",
+    title: "ReThesis",
+    description: "Active participant in AI research and technical knowledge-sharing.",
+    icon: "📖",
+  },
+  {
+    title: "AI Communities",
+    description: "Active member of AI/ML, open-source, and developer communities.",
+    icon: "🤝",
   },
 ];
 

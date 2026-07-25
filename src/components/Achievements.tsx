@@ -1,61 +1,8 @@
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-
-const achievements = [
-  {
-    title: "JEE Advanced",
-    description: "Cleared one of India’s toughest engineering entrance examinations.",
-    icon: "🎓",
-  },
-  {
-    title: "Math Olympiad",
-    description: "Ranked among the Top 50 students nationwide in National Math Olympiad.",
-    icon: "🏆",
-  },
-  {
-    title: "Meta Hackathon",
-    description: "Participated in Meta Hackathon and built AI-driven solutions.",
-    icon: "💬",
-  },
-  {
-    title: "Vector Global",
-    description: "Competed in hackathon focused on vector embeddings and semantic search.",
-    icon: "🧠",
-  },
-  {
-    title: "AI for Bharat",
-    description: "Developed AI solutions for Indian social challenges (AWS Hackathon).",
-    icon: "🇮🇳",
-  },
-  {
-    title: "AI Agent Olympics",
-    description: "Selected participant focused on autonomous AI agent systems.",
-    icon: "🤖",
-  },
-  {
-    title: "Hacktoberfest",
-    description: "Successfully merged 3 PRs into major open-source repositories.",
-    icon: "🚀",
-  },
-  {
-    title: "GSSoC ’26",
-    description: "Selected contributor for GirlScript Summer of Code.",
-    icon: "💻",
-  },
-  {
-    title: "ReThesis",
-    description: "Active participant in AI research and technical knowledge-sharing.",
-    icon: "📖",
-  },
-  {
-    title: "AI Communities",
-    description: "Active member of AI/ML, open-source, and developer communities.",
-    icon: "🤝",
-  },
-];
+import { achievements } from "../constants";
 
 interface AchievementCardProps {
   index: number;
@@ -65,31 +12,41 @@ interface AchievementCardProps {
 }
 
 const AchievementCard = ({ index, title, description, icon }: AchievementCardProps) => (
-  <motion.div variants={fadeIn("right", "spring", index * 0.2, 0.75)}>
-    <Tilt
-      options={{
-        max: 25,
-        scale: 1.05,
-        speed: 400,
-      }}
-      className='bg-tertiary p-6 rounded-2xl xs:w-[260px] w-full border-b-4 border-accent shadow-2xl hover:bg-white/5 transition-all duration-300 flex flex-col min-h-[220px]'
-    >
-      <div className='text-[32px] mb-3'>{icon}</div>
-      <h3 className='text-white font-bold text-[18px] tracking-tight leading-tight'>{title}</h3>
-      <p className='mt-3 text-secondary text-[13px] leading-relaxed'>{description}</p>
-    </Tilt>
+  <motion.div 
+    variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+    className="w-full"
+  >
+    <div className='relative group h-full'>
+      {/* Glow Effect */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+      
+      {/* Card Content */}
+      <div className='relative h-full bg-tertiary p-6 rounded-2xl flex flex-col hover:-translate-y-2 transition-all duration-300'>
+        <div className='w-12 h-12 rounded-full bg-black-200 flex justify-center items-center mb-4 shadow-inner'>
+          <span className='text-[24px]'>{icon}</span>
+        </div>
+        
+        <h3 className='text-white font-bold text-[18px] tracking-tight mb-2'>
+          {title}
+        </h3>
+        
+        <p className='text-secondary text-[14px] leading-relaxed flex-grow'>
+          {description}
+        </p>
+      </div>
+    </div>
   </motion.div>
 );
 
 const Achievements = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p className={styles.sectionSubText}>Milestones</p>
         <h2 className={styles.sectionHeadText}>Achievements.</h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-wrap justify-center gap-6'>
+      <div className='mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
         {achievements.map((achievement, index) => (
           <AchievementCard key={`achievement-${index}`} index={index} {...achievement} />
         ))}
@@ -98,4 +55,5 @@ const Achievements = () => {
   );
 };
 
-export default SectionWrapper(Achievements, "");
+export default SectionWrapper(Achievements, "achievements");
+
